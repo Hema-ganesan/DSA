@@ -1,34 +1,27 @@
+import java.util.*;
+
 class Solution {
     public List<Integer> luckyNumbers(int[][] matrix) {
-        List<Integer> bryan=new ArrayList<>();
-        for(int i=0;i<matrix.length;i++)
-        {
-            int min=matrix[i][0];
-            int col=0;
-            for(int j=1;j<matrix[i].length;j++)
-            {
-                if(matrix[i][j]<min)
-                {
-                    min=matrix[i][j];
-                    col=j;
-                }
-            }
-            boolean isb=true;
-                for(int k=0;k<matrix.length;k++)
-                {
-                    if(matrix[k][col]>min)
-                    {
-                        isb=false;
+        List<Integer> result = new ArrayList<>();
+        int m = matrix.length;
+        int n = matrix[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int val = matrix[i][j];
+                int k;
+                for (k = 0; k < n; k++) {
+                    if (matrix[i][k] < val)
                         break;
-                    }
                 }
-                if(isb)
-                {
-                    bryan.add(min);
+                if (k != n) continue;
+                for (k = 0; k < m; k++) {
+                    if (matrix[k][j] > val)
+                        break;
                 }
+                if (k != m) continue;
+                result.add(val);
+            }
         }
-        return bryan;
-
-        
+        return result;
     }
 }
