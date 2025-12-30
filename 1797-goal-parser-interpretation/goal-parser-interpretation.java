@@ -8,10 +8,10 @@ class Solution {
             else if (command.charAt(i) == '(') {
                 if (command.charAt(i + 1) == ')') {
                     sb.append('o');
-                    i++; // skip ')'
-                } else { // "(al)"
+                    i++; 
+                } else { 
                     sb.append("al");
-                    i += 3; // skip "al)"
+                    i += 3; 
                 }
             }
         }
