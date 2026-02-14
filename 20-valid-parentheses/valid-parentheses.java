@@ -4,10 +4,10 @@ class Solution {
         int top = -1; 
         for (char c : s.toCharArray()) {
             if (c == '(' || c == '{' || c == '[') {
-                stack[++top] = c; // push
+                stack[++top] = c; 
             } else {
                 if (top == -1) return false; 
-                char open = stack[top--]; // pop
+                char open = stack[top--]; 
                 if ((c == ')' && open != '(') ||
                     (c == '}' && open != '{') ||
                     (c == ']' && open != '[')) {
