@@ -5,13 +5,13 @@ class Solution {
         int pos=0;
         int neg=1;
         for(int i=0;i<len;i++){
-            if(nums[i]>0){
-                ans[pos]=nums[i];
-                pos+=2;
-            }
-            else{
+            if(nums[i]<0){
                 ans[neg]=nums[i];
                 neg+=2;
+            }
+            else{
+                ans[pos]=nums[i];
+                pos+=2;
             }
         }
         return ans;
