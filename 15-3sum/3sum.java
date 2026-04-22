@@ -17,11 +17,7 @@ class Solution {
                     k--;
                 }
                 else{
-                    List<Integer> bry=new ArrayList<>();
-                    bry.add(nums[i]);
-                    bry.add(nums[j]);
-                    bry.add(nums[k]);
-                    hema.add(bry);
+                    hema.add(Arrays.asList(nums[i],nums[j],nums[k]));
                     j++;
                     k--;
                     while(j<k && nums[j]==nums[j-1]){
