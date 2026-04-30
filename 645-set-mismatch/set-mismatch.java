@@ -5,7 +5,7 @@ class Solution {
             h[n]++;
         }
         int dup=-1,miss=-1;
-        for(int i=0;i<h.length;i++){
+        for(int i=1;i<h.length;i++){
             if(h[i]==0){
                 miss=i;
             }
