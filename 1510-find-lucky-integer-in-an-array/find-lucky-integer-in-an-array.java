@@ -5,9 +5,9 @@ class Solution {
         for(int i=0;i<arr.length;i++){
             bry[arr[i]]++;
         }
-        for(int i=0;i<arr.length;i++){
-            if(bry[arr[i]]==arr[i]){
-                max=Math.max(max,arr[i]);
+        for(int i=1;i<bry.length;i++){
+            if(bry[i]==i){
+                max=Math.max(max,i);
             }
         }
       return max;
