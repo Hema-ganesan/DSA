@@ -1,10 +1,19 @@
 class Solution {
     public int mySqrt(int x) {
-        int i = 0;
-        while ((long)i * i <= x) {
-            i++;
+        int l=0;
+        int h=x;
+        int ans=0;
+        while(l<=h){
+            int m=l+(h-l)/2;
+            long sq=(long)m * m;
+            if(sq<=x){
+                ans=m;
+                l=m+1;
+            }
+            else{
+                h=m-1;
+            }
         }
-        return i - 1;
+        return ans;
     }
 }
-
