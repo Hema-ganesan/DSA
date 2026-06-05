@@ -1,16 +1,21 @@
 class Solution {
     public String reverseWords(String s) {
-        String[] s1=s.split(" ");
-        String rev="";
-        for(int i=0;i<s1.length;i++){
-            String w=s1[i];
-            for(int j=w.length()-1;j>=0;j--){
-                rev+=w.charAt(j);
-            }
-            if(i!=s1.length-1){
-                rev+=" ";
-            }
+        String[] hema=s.split(" ");
+        for(int i=0;i<hema.length;i++){
+            hema[i]=reverse(hema[i]);
         }
-        return rev;
+        return String.join(" ", hema);
+    }
+    public String reverse(String hema){
+        char bry[]=hema.toCharArray();
+        int l=0,r=bry.length-1;
+        while(l<r){
+            char t=bry[l];
+            bry[l]=bry[r];
+            bry[r]=t;
+            l++;
+            r--;
+        }
+        return new String(bry);
     }
 }
