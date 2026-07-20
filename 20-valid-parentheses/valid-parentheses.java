@@ -1,6 +1,7 @@
 class Solution {
     public boolean isValid(String s) {
         Stack<Character>bh=new Stack<>();
+        
         for(char bry:s.toCharArray()){
             if(bry=='[' || bry=='('||bry=='{'){
                 bh.push(bry);
