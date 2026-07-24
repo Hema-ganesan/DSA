@@ -9,14 +9,14 @@ class Solution {
             }
             else{
                 nums1[k]=nums2[j];
-                j--;
                 k--;
+                j--;
             }
         }
         while(j>=0){
             nums1[k]=nums2[j];
-            j--;
             k--;
+            j--;
         }
     }
 }
