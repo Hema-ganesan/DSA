@@ -8,15 +8,13 @@ class MinStack {
     
     public void push(int value) {
         b.push(value);
-        if(h.isEmpty() || value<=h.peek())
-        {
+        if(h.isEmpty()||value<=h.peek()){
             h.push(value);
         }
     }
     
     public void pop() {
-        if(b.peek().equals(h.peek()))
-        {
+        if(h.peek().equals(b.peek())){
             h.pop();
         }
         b.pop();
