@@ -1,36 +1,18 @@
-// class Solution {
-//     public int findMin(int[] nums) {
-//         int s=0;
-//         int min=nums[0];
-//         for(s=1;s<nums.length;s++){
-//             if(nums[s]<=min){
-//                 min=nums[s];
-//             }
-//         }
-//         return min;
-//     }
-// }
-
 
 class Solution {
     public int findMin(int[] nums) {
-        int l=0,h=nums.length-1;
-        int ans=Integer.MAX_VALUE;
-        while(l<=h){
-            int m=l+(h-l)/2;
-            if(nums[l]<=nums[h]){
-                ans=Math.min(ans,nums[l]);
-                break;
-            }
-            if(nums[l]<=nums[m]){
-                ans=Math.min(ans,nums[l]);
-                l=m+1;
+        int low=0;
+        int ans=0;
+        int high=nums.length-1;
+        while(low<high){
+            int mid=(low+high)/2;
+            if(nums[mid]>nums[high]){
+                low=mid+1;
             }
             else{
-                h=m-1;
-                ans=Math.min(ans,nums[m]);
+                high=mid;
             }
         }
-        return ans;
+        return nums[low];
     }
 }
