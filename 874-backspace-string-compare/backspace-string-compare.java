@@ -2,8 +2,6 @@ class Solution {
     public boolean backspaceCompare(String s, String t) {
         Stack<Character> s1=new Stack<>();
         Stack<Character> t1=new Stack<>();
-        StringBuilder ans1 = new StringBuilder();
-        StringBuilder ans2 = new StringBuilder();
         for(char x:s.toCharArray()){
             if(x != '#'){
                 s1.push(x);
